@@ -28,14 +28,14 @@ const byte firmwareVersionMinor = 3;
 
 #include <Wire.h> //For I2C functions
 #include <SPI.h> //For SPI functions
-#include <LiquidCrystalFast.h> //Faster LCD commands. From PJRC https://www.pjrc.com/teensy/td_libs_LiquidCrystal.html
+#include "src/LiquidCrystalFast/LiquidCrystalFast.h" //Faster LCD commands. From PJRC https://www.pjrc.com/teensy/td_libs_LiquidCrystal.html
 #include <EEPROM.h>  //Brightness, Baud rate, and I2C address are stored in EEPROM
 #include "settings.h" //Defines EEPROM locations for user settings
 #include <avr/wdt.h> //Watchdog to prevent system freeze
 #include <avr/sleep.h> //Needed for sleep_mode
 #include <avr/power.h> //Needed for powering down perihperals such as the ADC/TWI and Timers
 
-#include <SoftPWM.h> //Software PWM for Blue backlight: From https://github.com/bhagman/SoftPWM
+#include "src/SoftPWM-master/SoftPWM.h" //Software PWM for Blue backlight: From https://github.com/bhagman/SoftPWM
 //SoftPWM uses Timer 2
 
 LiquidCrystalFast SerLCD(LCD_RS, LCD_RW, LCD_EN, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
